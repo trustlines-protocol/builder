@@ -1,0 +1,31 @@
+version: 2.1
+
+executors:
+  ubuntu-builder:
+    docker:
+      - image: circleci/buildpack-deps:bionic
+    working_directory: ~/repo
+
+# define some common commands
+# see https://circleci.com/docs/2.0/configuration-reference/#commands-requires-version-21
+commands:
+  build-docker-image:
+    steps:
+      - run:
+          name: Build docker image
+          command: |
+            docker build . -t builder
+
+jobs:
+  build-docker-image:
+    executor: ubuntu-builder
+    steps:
+      - setup_remote_docker
+      - checkout
+      - build-docker-image
+
+workflows:
+  version: 2
+  default:
+    jobs:
+      - build-docker-image
