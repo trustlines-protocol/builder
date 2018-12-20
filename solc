@@ -1,0 +1,4 @@
+#! /bin/bash
+
+: "${SOLC_VERSION:?Variable not set or empty}"
+exec solc-${SOLC_VERSION} "$@"
