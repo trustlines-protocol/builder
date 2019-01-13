@@ -51,4 +51,5 @@ workflows:
   version: 2
   default:
     jobs:
-      - build-and-upload
+      - build-and-upload:
+          context: docker-credentials
