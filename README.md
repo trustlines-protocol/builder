@@ -43,3 +43,10 @@ Enable it by configuring something like:
 
 ## Twine
 twine can be used to upload python packages to pypi.
+
+# Changing the image
+
+Please feel free to change the image according to your needs, but try to stay
+backwards compatible. E.g. if you add a new solidity version, don't remove the
+old version unless you're sure it's not being used anymore. This will allow us
+to use the latest image everywhere.
