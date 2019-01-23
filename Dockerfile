@@ -33,3 +33,4 @@ RUN curl -L -o ~/bin/solc-v0.5.1 https://github.com/ethereum/solidity/releases/d
 
 RUN echo 'export PATH=~/venv/bin:~/bin:~/.local/bin:$PATH' >>.bashrc
 COPY solc ./bin/
+CMD ["/bin/bash"]
