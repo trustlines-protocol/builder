@@ -32,15 +32,15 @@ The image has Node Version Manager installed with nodejs 10.14.2 already install
 
 Enable it by configuring something like:
 
-  config-path:
-    description: "set environment variables and change PATH"
-    steps:
-    - run:
-        name: Configuring PATH
-        command: |
-          echo >> ${BASH_ENV} 'export PATH=~/bin:~/repo/venv/bin:${PATH}'
-          echo >> ${BASH_ENV} '. ~/.nvm/nvm.sh'
-
+    config-path:
+      description: "set environment variables and change PATH"
+      steps:
+      - run:
+          name: Configuring PATH
+          command: |
+            echo >> ${BASH_ENV} 'export PATH=~/bin:~/repo/venv/bin:${PATH}'
+            echo >> ${BASH_ENV} '. ~/.nvm/nvm.sh'
+  
 ## Twine
 twine can be used to upload python packages to pypi.
 
