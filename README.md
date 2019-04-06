@@ -3,7 +3,7 @@ based image to be used as a build executor on CircleCI.
 
 # What's inside
 
-The image comes with some things preinstalled.
+The image comes with a python and nodejs development setup preinstalled.
 
 ## Postgresql 
 
