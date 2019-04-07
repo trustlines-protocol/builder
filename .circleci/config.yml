@@ -28,9 +28,12 @@ commands:
       - run:
           name: Upload docker image
           command: |
-            docker tag << parameters.local-name >> << parameters.remote-name >>
-            docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-            docker push << parameters.remote-name >>
+            if test -n "$DOCKER_USER"; then
+                docker tag << parameters.local-name >> << parameters.remote-name >>
+                docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+                docker push << parameters.remote-name >>
+            fi
+
 
 jobs:
   build-and-upload:
