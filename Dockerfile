@@ -32,6 +32,7 @@ RUN curl -L -o ~/bin/solc-v0.4.25 https://github.com/ethereum/solidity/releases/
 RUN curl -L -o ~/bin/solc-v0.4.26 https://github.com/ethereum/solidity/releases/download/v0.4.26/solc-static-linux && chmod +x ~/bin/solc-v0.4.26
 RUN curl -L -o ~/bin/solc-v0.5.1 https://github.com/ethereum/solidity/releases/download/v0.5.1/solc-static-linux && chmod +x ~/bin/solc-v0.5.1
 RUN curl -L -o ~/bin/solc-v0.5.7 https://github.com/ethereum/solidity/releases/download/v0.5.7/solc-static-linux && chmod +x ~/bin/solc-v0.5.7
+RUN curl -L -o ~/bin/solc-v0.5.8 https://github.com/ethereum/solidity/releases/download/v0.5.8/solc-static-linux && chmod +x ~/bin/solc-v0.5.8
 
 RUN echo 'export PATH=~/venv/bin:~/bin:~/.local/bin:$PATH' >>.bashrc
 COPY solc ./bin/
