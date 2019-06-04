@@ -3,14 +3,19 @@ based image to be used as a build executor on CircleCI.
 
 # What's inside
 
-The image comes with some things preinstalled.
+The image comes with some things pre-installed.
 
 ## Postgresql 
 
 The PostgreSQL server and dev files are installed.
 
+## Image name
+The name:tag of the image will be `trustlines/builder:$CIRCLE_BRANCH$CIRCLE_BUILD_NUM`.
+To check the most recent tag, go to the [dockerhub repo](https://hub.docker.com/r/trustlines/builder/tags) of trustlines/builder.
+
+
 ## Solidity
-Currently the image contains solidity 0.4.24 and 0.5.1.
+Currently the image contains solidity versions 0.4.25, 0.4.26, 0.5.1, 0.5.7, and 0.5.8.
 
 You can choose the version that's being used by setting the SOLC_VERSION
 environment variable.
