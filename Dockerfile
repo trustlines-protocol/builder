@@ -9,7 +9,7 @@ RUN sudo apt-get update && \
     sudo apt-get install -y build-essential apt-utils libssl-dev curl graphviz \
          libsecp256k1-dev python3 python3-distutils python3-dev python3-venv \
          python3-virtualenv virtualenv git build-essential postgresql-10 libpq-dev \
-         libgraphviz-dev libsecp256k1-dev pkg-config pipsi twine ruby-dev && \
+         libgraphviz-dev libsecp256k1-dev pkg-config pipsi twine ruby-dev shellcheck && \
     sudo rm -rf /var/lib/apt/lists/*
 RUN sudo gem install fpm
 RUN mkdir bin
