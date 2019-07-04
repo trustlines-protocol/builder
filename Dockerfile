@@ -18,7 +18,7 @@ RUN mkdir bin
 # Install nvm with node and npm
 ENV NODE_VERSION 10.14.2
 ENV NVM_DIR /home/circleci/.nvm
-RUN mkdir -p $NVM_DIR; curl -sL https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash -
+RUN mkdir -p $NVM_DIR; curl -sL https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash -
 RUN . $NVM_DIR/nvm.sh \
     && nvm install $NODE_VERSION \
     && nvm alias default $NODE_VERSION \
