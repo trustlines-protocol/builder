@@ -49,6 +49,9 @@ Enable it by configuring something like:
 ## Twine
 twine can be used to upload python packages to pypi.
 
+## shellcheck
+shellcheck is a linter for shell scripts.
+
 # Changing the image
 
 Please feel free to change the image according to your needs, but try to stay

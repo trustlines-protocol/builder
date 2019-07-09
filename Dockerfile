@@ -9,7 +9,7 @@ RUN sudo apt-get update && \
     sudo apt-get install -y build-essential apt-utils libssl-dev curl graphviz \
          libsecp256k1-dev python3 python3-distutils python3-dev python3-venv \
          python3-virtualenv virtualenv git build-essential postgresql-10 libpq-dev \
-         libgraphviz-dev libsecp256k1-dev pkg-config pipsi twine ruby-dev && \
+         libgraphviz-dev libsecp256k1-dev pkg-config pipsi twine ruby-dev shellcheck && \
     sudo rm -rf /var/lib/apt/lists/*
 RUN sudo gem install fpm
 RUN mkdir bin
@@ -18,7 +18,7 @@ RUN mkdir bin
 # Install nvm with node and npm
 ENV NODE_VERSION 10.14.2
 ENV NVM_DIR /home/circleci/.nvm
-RUN mkdir -p $NVM_DIR; curl -sL https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash -
+RUN mkdir -p $NVM_DIR; curl -sL https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash -
 RUN . $NVM_DIR/nvm.sh \
     && nvm install $NODE_VERSION \
     && nvm alias default $NODE_VERSION \
