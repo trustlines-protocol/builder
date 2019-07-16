@@ -27,6 +27,8 @@ RUN . $NVM_DIR/nvm.sh \
 ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
 ENV PATH      $NVM_DIR/v$NODE_VERSION/bin:$PATH
 
+RUN curl -L -o ~/bin/shfmt https://github.com/mvdan/sh/releases/download/v2.6.4/shfmt_v2.6.4_linux_amd64 && chmod +x ~/bin/shfmt
+
 # -- Install solidity
 RUN curl -L -o ~/bin/solc-v0.4.25 https://github.com/ethereum/solidity/releases/download/v0.4.25/solc-static-linux && chmod +x ~/bin/solc-v0.4.25
 RUN curl -L -o ~/bin/solc-v0.4.26 https://github.com/ethereum/solidity/releases/download/v0.4.26/solc-static-linux && chmod +x ~/bin/solc-v0.4.26
