@@ -30,6 +30,10 @@ solidity 0.4.25::
             environment:
               - SOLC_VERSION=v0.4.25
         working_directory: ~/repo
+        
+## Openethereum
+
+The image comes with Openethereum version 3.0.1 installed.
 
 ## Nvm
 
