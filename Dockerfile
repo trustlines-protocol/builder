@@ -39,9 +39,9 @@ RUN curl -L -o ~/bin/solc-v0.5.8 https://github.com/ethereum/solidity/releases/d
 # Donload unzip
 RUN sudo apt-get install -y unzip
 
-# Download openethereum 3.0.1.
-RUN curl -L -o openethereum_zip https://github.com/openethereum/openethereum/releases/download/v3.0.1/openethereum-linux-v3.0.1.zip
-RUN sudo echo 8dd753058e5db77ffaede5a53418005f9c8133212448e11df9169a651cdac997 openethereum_zip | sha256sum -c \
+# Download openethereum 3.1.0
+RUN curl -L -o openethereum_zip https://github.com/openethereum/openethereum/releases/download/v3.1.0/openethereum-linux-v3.1.0.zip
+RUN sudo echo b5a924c625de2f18981ec5514782c6eb4c14db82a8788f7084667a9d8bcb74f6 openethereum_zip | sha256sum -c \
 && unzip -j openethereum_zip openethereum -d ~/bin/ \
 && chmod 755 ~/bin/openethereum \
 && rm -f openethereum_zip
