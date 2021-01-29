@@ -1,0 +1,3 @@
+#! /bin/bash
+
+exec python${PYTHON_VERSION:-3.6} "$@"

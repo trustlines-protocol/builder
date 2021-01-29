@@ -10,6 +10,8 @@ RUN sudo apt-get update && \
          libsecp256k1-dev python3 python3-distutils python3-dev python3-venv \
          python3-virtualenv virtualenv git build-essential postgresql-10 libpq-dev \
          libgraphviz-dev libsecp256k1-dev pkg-config pipsi ruby-dev shellcheck && \
+    sudo apt-get install python3.8 && \
+    sudo apt-get install python3.7 && \
     sudo rm -rf /var/lib/apt/lists/*
 RUN sudo gem install fpm
 RUN mkdir bin
@@ -49,4 +51,5 @@ RUN sudo echo b5a924c625de2f18981ec5514782c6eb4c14db82a8788f7084667a9d8bcb74f6 o
 
 RUN echo 'export PATH=~/venv/bin:~/bin:~/.local/bin:$PATH' >>.bashrc
 COPY solc ./bin/
+COPY python ./bin/
 CMD ["/bin/bash"]
