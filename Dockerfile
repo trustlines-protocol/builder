@@ -6,8 +6,13 @@
 FROM circleci/buildpack-deps:bionic
 WORKDIR /home/circleci
 RUN sudo apt-get update && \
-    sudo apt-get install -y build-essential apt-utils libssl-dev curl graphviz \
-         libsecp256k1-dev python3 python3-distutils python3-dev python3-venv \
+    sudo apt-get install -y build-essential apt-utils libssl-dev curl graphviz software-properties-common \
+         libsecp256k1-dev && \
+    sudo add-apt-repository -y ppa:deadsnakes/ppa && \
+    sudo apt-get update && \
+    sudo apt-get install -y python3 python3-distutils python3-dev python3-venv python3-virtualenv \
+         python3.8 python3.8-distutils python3.8-dev python3.8-venv \
+         python3.9 python3.9-distutils python3.9-dev python3.9-venv \
          python3-virtualenv virtualenv git build-essential postgresql-10 libpq-dev \
          libgraphviz-dev libsecp256k1-dev pkg-config pipsi ruby-dev shellcheck && \
     sudo rm -rf /var/lib/apt/lists/*
@@ -47,6 +52,6 @@ RUN sudo echo b5a924c625de2f18981ec5514782c6eb4c14db82a8788f7084667a9d8bcb74f6 o
 && chmod 755 ~/bin/openethereum \
 && rm -f openethereum_zip
 
-RUN echo 'export PATH=~/venv/bin:~/bin:~/.local/bin:$PATH' >>.bashrc
+RUN echo 'export PATH=~/bin:~/venv/bin:~/.local/bin:$PATH' >>.bashrc
 COPY solc ./bin/
 CMD ["/bin/bash"]
