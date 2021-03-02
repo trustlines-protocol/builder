@@ -15,7 +15,7 @@ To check the most recent tag, go to the [dockerhub repo](https://hub.docker.com/
 
 
 ## Solidity
-Currently the image contains solidity versions 0.4.25, 0.4.26, 0.5.1, 0.5.7, and 0.5.8.
+Currently the image contains solidity versions 0.4.25, 0.4.26, 0.5.1, 0.5.7, 0.5.8 and 0.8.0.
 
 You can choose the version that's being used by setting the SOLC_VERSION
 environment variable.
