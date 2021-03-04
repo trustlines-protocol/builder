@@ -20,6 +20,11 @@ RUN sudo gem install fpm
 RUN mkdir bin
 RUN pipsi install twine
 
+# Install nightly rust version see https://stackoverflow.com/questions/65649421/error-installing-web3tester-failed-building-wheel-for-blake2b-py
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y
+RUN $HOME/.cargo/bin/rustup toolchain install nightly
+RUN $HOME/.cargo/bin/rustup default nightly
+
 # Install nvm with node and npm
 ENV NODE_VERSION 10.14.2
 ENV NVM_DIR /home/circleci/.nvm
